@@ -6,29 +6,29 @@
  * LICENSE file in the root directory of this source tree.
  */
 // @remove-on-eject-end
-'use strict';
+'use strict'
 
-const autoprefixer = require('autoprefixer');
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-const getClientEnvironment = require('./env');
-const paths = require('./paths');
+const autoprefixer = require('autoprefixer')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
+const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const eslintFormatter = require('react-dev-utils/eslintFormatter')
+const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
+const getClientEnvironment = require('./env')
+const paths = require('./paths')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
-const publicPath = '/';
+const publicPath = '/'
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
-const publicUrl = '';
+const publicUrl = ''
 // Get environment variables to inject into our app.
-const env = getClientEnvironment(publicUrl);
+const env = getClientEnvironment(publicUrl)
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -82,7 +82,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/253
     modules: ['node_modules', paths.appNodeModules].concat(
       // It is guaranteed to exist because we tweak it in `env.js`
-      process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
+      process.env.NODE_PATH.split(path.delimiter).filter(Boolean),
     ),
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
@@ -98,7 +98,7 @@ module.exports = {
       // unfortunate to rely on, as react-scripts could be symlinked,
       // and thus babel-runtime might not be resolvable from the source.
       'babel-runtime': path.dirname(
-        require.resolve('babel-runtime/package.json')
+        require.resolve('babel-runtime/package.json'),
       ),
       // @remove-on-eject-end
       // Support React Native Web
@@ -134,6 +134,9 @@ module.exports = {
               // @remove-on-eject-begin
               baseConfig: {
                 extends: [require.resolve('eslint-config-react-app')],
+                rules: {
+                  eqeqeq: 'off',
+                },
               },
               ignore: false,
               useEslintrc: false,
@@ -285,4 +288,4 @@ module.exports = {
   performance: {
     hints: false,
   },
-};
+}
