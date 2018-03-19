@@ -27,8 +27,8 @@ const Header = styled.header`
 const Title = styled.h1`font-size: 1.5rem;`
 
 const rotate = keyframes`
-from { transform: rotate(0deg); }
-to { transform: rotate(360deg); }
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
 `
 
 const Logo = styled.img`
@@ -50,7 +50,8 @@ export class Root extends React.Component {
 
       <Container>
         <Intro>
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, edit <code>src/features/Root/Root.js</code> and save
+          to reload.
         </Intro>
       </Container>
     </Fragment>
