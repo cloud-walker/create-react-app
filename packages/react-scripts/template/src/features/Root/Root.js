@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react'
 import styled, {injectGlobal, keyframes} from 'styled-components'
+import {hot} from 'react-hot-loader'
 
 import logo from './logo.svg'
 
@@ -38,7 +39,7 @@ const Logo = styled.img`
 
 const Intro = styled.div`font-size: large;`
 
-export class Root extends React.Component {
+class Root extends React.Component {
   render = () => (
     <Fragment>
       <Header>
@@ -57,3 +58,5 @@ export class Root extends React.Component {
     </Fragment>
   )
 }
+
+export default hot(module)(Root)
