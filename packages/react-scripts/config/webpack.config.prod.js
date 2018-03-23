@@ -182,6 +182,10 @@ module.exports = {
               plugins: [
                 require.resolve('babel-plugin-styled-components'),
                 require.resolve('react-hot-loader/babel'),
+                [
+                  require.resolve('babel-plugin-module-resolver'),
+                  {alias: {'~': paths.appSrc}},
+                ],
               ],
               // @remove-on-eject-end
               compact: true,

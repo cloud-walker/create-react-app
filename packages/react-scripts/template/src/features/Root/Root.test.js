@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Root from './Root'
+import Root from './index'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
